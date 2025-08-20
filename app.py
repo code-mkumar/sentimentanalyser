@@ -11,7 +11,7 @@ import nltk
 nltk.download('vader_lexicon')
 
 # ✅ Use Bearer Token (API v2)
-bearer_token = "AAAAAAAAAAAAAAAAAAAAAE6r3gEAAAAAKKG3pNn%2B99FMO51dxLzastGByDQ%3DcIbcUX0YnD5NuEWBsmwf6mF0gAcawUsT1zQ5r5gMyd35WBSjxU"
+bearer_token = "AAAAAAAAAAAAAAAAAAAAAF%2Bw3gEAAAAAhHGfewynTyeFJZ3bO4arx2Ec3ps%3DBRMye4oGqrnfXDMf6OS67a3CYbVdJJ15Bq1GfZOYfaGufLjW44"
 
 # Authenticate with Twitter API v2
 client = tweepy.Client(bearer_token=bearer_token)
@@ -32,7 +32,7 @@ if st.button("Analyze"):
         # Collect Tweets
         with st.spinner("Fetching tweets..."):
             tweets = client.search_recent_tweets(query=query,
-                                                 max_results=10,
+                                                 max_results=50,
                                                  tweet_fields=["created_at", "text"])
 
         if not tweets.data:
