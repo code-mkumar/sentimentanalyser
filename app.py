@@ -32,7 +32,7 @@ if st.button("Analyze"):
         # Collect Tweets
         with st.spinner("Fetching tweets..."):
             tweets = client.search_recent_tweets(query=query,
-                                                 max_results=50,
+                                                 max_results=10,
                                                  tweet_fields=["created_at", "text"])
 
         if not tweets.data:
